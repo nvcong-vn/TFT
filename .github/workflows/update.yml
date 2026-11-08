@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
+      - run: python patch_index.py
       - run: python update.py
         env:
           COMPS_CSV_URL: ${{ vars.COMPS_CSV_URL }}
