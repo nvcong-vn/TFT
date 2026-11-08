@@ -1,149 +1,104 @@
-#!/usr/bin/env python3
-"""Điền lại dữ liệu vào index.html từ data/*.json. Chạy: python update.py
+<!doctype html>
+<!-- TFT Compass: single-file source export of published commit fbc00322742034c16535e91839aa2b07d903ed75. CSS, JavaScript and game data are inline. Images load from MetaTFT CDN and require Internet. No automatic MetaTFT synchronization is implemented. -->
+<html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TFT Compass • Gợi ý đội hình</title><style>
+:root{color-scheme:dark;--bg:#0c1119;--panel:#141d29;--line:#293444;--muted:#9baabe;--text:#eef4fa;--mint:#77e3c4}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#14353870,transparent 40%),var(--bg);font:14px/1.6 system-ui,sans-serif;color:var(--text)}header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:22px;padding:0 5%}.brand{letter-spacing:2px;font-size:19px}.brand b{font-weight:450;color:var(--mint)}.logo{font-size:30px;color:var(--mint);vertical-align:middle;margin-right:10px}header a{margin-left:auto}a{color:var(--mint);text-decoration:none}.badge,.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px}.badge{padding:5px 9px;border:1px solid var(--line);border-radius:5px;color:var(--muted)}main{max-width:1450px;padding:42px 5%;margin:auto}.eyebrow{color:var(--mint)}h1{font-size:40px;line-height:1.25;letter-spacing:-1.5px;margin:15px 0}h1 em{font-style:normal;color:var(--mint)}.hero p{color:var(--muted);font-size:16px}.notice{border-left:3px solid #d4b574;padding:10px 16px;margin:28px 0;color:#d8c99f;background:#c9a34e09;font-size:12px}.notice small{color:var(--muted)}.layout{display:grid;grid-template-columns:365px 1fr;gap:28px}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px}h2{font-size:13px;color:var(--mint);font-weight:500;margin:0 0 16px}h2 span{color:var(--text);font-size:18px;margin-left:10px}h3{font-size:13px;margin:18px 0 10px}.muted{color:var(--muted);font-size:12px}button,input{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:8px;background:#1c2939;color:var(--text);padding:9px 12px}button:hover{border-color:var(--mint)}button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--mint);outline-offset:3px}.plain{border:0;background:none;color:var(--muted);font-size:11px;padding:4px}.tabs{display:flex;gap:5px;margin:3px 0 15px}.tabs button{flex:1;border:0;background:#0d1521}.tabs button.active{background:#254439;color:var(--mint)}.tabs span{margin-left:8px;font-size:11px}input[type=text],input:not([type]){width:100%;border:1px solid var(--line);border-radius:8px;padding:11px;background:#0e1622;color:var(--text)}#picker{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;max-height:335px;overflow:auto;padding:3px}#picker.items{grid-template-columns:1fr 1fr}.unit{font-size:10px;padding:6px 2px;min-height:74px;background:#182331}.unit img{display:block;width:38px;height:38px;border-radius:8px;margin:0 auto 4px}.unit.chosen{border-color:var(--mint);background:#243e38}.item{font-size:11px;text-align:left;line-height:1.3}.item small{display:block;color:var(--muted);font-size:9px;margin-top:5px}.chip{display:inline-flex;align-items:center;gap:8px;font-size:11px;border:1px solid #3f6058;color:var(--mint);padding:3px 8px;border-radius:6px;margin:3px}.chip button{padding:0 4px;border:0;background:none;color:inherit}.settings label{display:flex;justify-content:space-between;font-size:12px}.settings output{color:var(--mint)}input[type=range]{width:100%;accent-color:var(--mint)}.secondary{width:100%;font-size:12px}.card{padding:22px}.card:first-child{border-color:#4b8f7f}.cardtop{display:flex;justify-content:space-between;align-items:center;gap:10px}.card h3{font-size:20px;margin:0}.tier{color:#dfc68f;background:#443c2d;padding:2px 7px;font-size:11px;border-radius:5px;margin-right:9px}.score{font-size:28px;color:var(--mint);line-height:1.2;text-align:right}.score small{display:block;font-size:10px;color:var(--muted)}.meta{color:var(--muted);font-size:11px;margin:8px 0 16px}.roster{display:flex;gap:8px;flex-wrap:wrap}.portrait{width:64px;text-align:center;color:var(--muted);font-size:10px}.portrait img{width:46px;height:46px;border:2px solid #465169;border-radius:9px;display:block;margin:auto}.portrait.have{color:var(--mint)}.portrait.have img{border-color:var(--mint)}.bar{height:4px;border-radius:4px;background:#263243;margin:19px 0 9px}.bar i{display:block;background:var(--mint);height:100%;border-radius:4px}.reason{font-size:12px;color:var(--muted)}details{margin-top:15px}summary{cursor:pointer;color:var(--mint);font-size:12px}.detailrow{padding:8px 0;border-top:1px solid var(--line);font-size:12px}.detailrow b{color:var(--text)}.match{color:var(--mint)}footer{color:var(--muted);font-size:11px;margin-top:30px}.empty{padding:12px;color:var(--muted);font-size:12px}#summary{font-size:12px;color:var(--muted);margin-bottom:15px}.panel p{font-size:12px}@media(max-width:1000px){.layout{grid-template-columns:320px 1fr}h1{font-size:32px}}@media(max-width:760px){.layout{display:block}main{padding:25px 5%}header{gap:10px}.badge{display:none}h1{font-size:30px}.card h3{font-size:17px}#picker{max-height:240px;grid-template-columns:repeat(5,1fr)}}
+select{width:100%;padding:9px;margin-bottom:10px;border-radius:8px;background:#101a27;color:var(--text);border:1px solid var(--line)}.detailrow small{display:block;color:var(--muted);margin-top:3px}.tabs button{padding:9px 5px;font-size:12px}.tabs span{margin-left:4px}.component-plan{border-left:2px solid var(--mint);padding-left:12px}.component-plan strong{color:#e5c887}#crafts{max-height:350px;overflow:auto}
+.cost-filters{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0}.cost-filters[hidden]{display:none}.cost-filters button{padding:6px 8px;font-size:11px}.cost-filters button[aria-pressed=true]{background:#254439;border-color:var(--mint);color:var(--mint)}.cost-heading{grid-column:1/-1;font-size:12px;color:var(--cost);padding-top:8px;border-bottom:1px solid var(--line);padding-bottom:5px}.tier-1{--cost:#a3aab5}.tier-2{--cost:#6dc48e}.tier-3{--cost:#6ca9f5}.tier-4{--cost:#c58aff}.tier-5{--cost:#edc369}.unit img{border-bottom:3px solid var(--cost)}.unit-cost{display:block;font-size:9px;color:var(--cost)}
+.item{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;padding:12px 7px;min-height:116px}.item .item-icon{width:44px;height:44px;border:1px solid #627285;border-radius:7px;object-fit:contain;background:#0b1019}.item-title{font-size:11px;line-height:1.35}.item-quantity{position:absolute;right:5px;top:5px;background:#24463c;border-radius:5px;padding:1px 5px;font-size:10px;color:var(--mint)}.item small{font-size:9px;margin-top:0}.item-icon.compact{width:25px;height:25px;vertical-align:middle;object-fit:contain;border-radius:4px;flex-shrink:0}.item-label{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;margin:2px 0}.recipe-plus{color:var(--muted)}.chip .item-icon.compact{width:22px;height:22px}#picker.items{max-height:430px}.item-icon[hidden]{display:none}
 
-1) Tướng + giá + trang bị phổ biến: lấy từ Google Sheet CSV (UNITS_CSV_URL) nếu có, lưu vào
-   data/units.json. Không có hoặc lỗi -> dùng data/units.json hiện có (sửa tay/ChatGPT vẫn được).
-2) Đội hình meta: đọc data/comps.json (bạn sửa tay, hoặc đặt COMPS_CSV_URL = link Google Sheet CSV).
-3) Ghi lại index.html + ngày cập nhật.
-"""
-import json, os, re, sys, urllib.request, csv, io
-from datetime import date
+</style><body><header><div class="brand"><span class="logo">◈</span> TFT <b>COMPASS</b></div><span class="badge">BẢN THỬ NGHIỆM</span><a href="https://www.metatft.com/comps" target="_blank" rel="noopener">MetaTFT ↗</a></header><main><div class="hero"><div class="eyebrow">TỪ NHỮNG GÌ BẠN ĐANG CÓ</div><h1>Tìm hướng đi cho <em>đội hình của bạn.</em></h1><p>Chọn tướng và trang bị. Khám phá đội hình phù hợp, biết nên giữ ai và tìm gì tiếp theo.</p></div><div class="notice"><!--NOTICE:START-->● Dữ liệu cập nhật ngày 08/11/2026: 7 đội hình.<!--NOTICE:END--><br><small>Đã hỗ trợ 10 loại mảnh đồ, 36 đồ thường, ấn và đồ đặc biệt. Chưa tự động đồng bộ đội hình. Đồ không có trong bộ tham khảo được ghi rõ là chưa khớp.</small></div><div class="layout"><aside><div class="panel"><div class="sectionhead"><h2>01 <span>Kho của bạn</span></h2><button id="reset" class="plain">Xóa chọn</button></div><div class="tabs"><button id="unitTab" class="active">Tướng <span id="uc">0</span></button><button id="componentTab">Mảnh đồ <span id="cc">0</span></button><button id="itemTab">Đồ ghép <span id="ic">0</span></button></div><input id="search" placeholder="Tìm tên tướng…" aria-label="Tìm tướng hoặc trang bị"><div id="costFilters" class="cost-filters" role="group" aria-label="Lọc tướng theo giá" hidden><button type="button" data-cost="0" aria-pressed="true">Tất cả</button><button type="button" data-cost="1" aria-pressed="false">1 vàng</button><button type="button" data-cost="2" aria-pressed="false">2 vàng</button><button type="button" data-cost="3" aria-pressed="false">3 vàng</button><button type="button" data-cost="4" aria-pressed="false">4 vàng</button><button type="button" data-cost="5" aria-pressed="false">5 vàng</button></div><p id="hint" class="muted">Chạm để thêm hoặc bỏ chọn tướng.</p><select id="category" aria-label="Nhóm trang bị" hidden><option value="all">Tất cả trang bị</option><option value="normal">Đồ thường (36)</option><option value="emblem">Ấn</option><option value="radiant">Đồ Ánh Sáng</option><option value="other">Đồ đặc biệt khác</option></select><div id="picker"></div><h3>Đang có</h3><div id="inventory"></div></div><div class="panel settings"><h3>Ưu tiên gợi ý</h3><label for="weight">Tướng <output id="weightLabel">50% · 50%</output> Trang bị</label><input type="range" id="weight" min="0" max="100" value="50"><p class="muted">Chỉ nhập một loại? App tự ưu tiên hoàn toàn loại đó.</p><button id="example" class="secondary">Thử kho mẫu: tướng + mảnh đồ</button></div></aside><section><div class="sectionhead"><h2>02 <span>Đội hình gợi ý</span></h2><span class="muted">7 đội hình</span></div><div id="summary" aria-live="polite"></div><div id="results"></div></section></div><details class="panel"><summary>Điểm phù hợp được tính như thế nào?</summary><p>Điểm tướng = tỷ lệ tướng đã chọn xuất hiện trong đội hình. Điểm trang bị tính cả đồ hoàn chỉnh và mảnh: món có sẵn hoặc ghép đủ được 2 điểm; công thức thiếu một mảnh được 0,5 điểm. Chia cho tổng tài nguyên trong kho (mỗi đồ hoàn chỉnh = 2, mỗi mảnh = 1). Hai điểm kết hợp theo thanh ưu tiên.</p><p>App tìm phương án có tổng điểm cao nhất trong các công thức của đội hình, mỗi mảnh chỉ được dùng một lần. Đồ đã hoàn chỉnh không bị tháo ra. Mảnh còn thiếu được tính sau khi phân bổ; các phương án ghép trong bảng tra cứu là lựa chọn thay thế, không phải ghép đồng thời.</p><p>Danh mục và công thức: <a href="https://www.metatft.com/items">MetaTFT</a> và <a href="https://fulltem.com/en/tft/items/">Fulltem Set 18</a>. Đồ không xuất hiện trong bộ trang bị của 7 đội hình hiện tại sẽ không được cộng điểm. Chưa suy luận đồ thay thế, đồ Ánh Sáng, cổ vật hoặc tác dụng tăng quân số. Điểm không phải xác suất thắng, và chưa xét sao tướng, lõi, kinh tế hay đối thủ.</p></details><footer>Dữ liệu tham khảo: <a href="https://www.metatft.com/comps">MetaTFT</a> · Công cụ độc lập, không liên kết với MetaTFT hoặc Riot Games.<br>Lựa chọn tự lưu trên trình duyệt này.</footer></main><script>
+// Source: data.js
+/*DATA:COMPS:START*/const raw=[["Vanguard Morgana", "Fast 9", "S", 4.03, [["Morgana", "Adaptive Helm|Morellonomicon|Void Staff"], ["Alune", "Jeweled Gauntlet|Nashor’s Tooth|Spear of Shojin"], ["Sentinel", "Gargoyle Stoneplate|Protector’s Vow|Warmog’s Armor"], ["Elder Dragon"], ["Taric"], ["Cassiopeia"], ["Diana"], ["Elise"]]], ["Invoker Teemo Alistar", "lvl 6", "S", 4.16, [["Teemo", "Jeweled Gauntlet|Spear of Shojin|Striker’s Flail"], ["Alistar", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["LeBlanc", "Blue Buff|Jeweled Gauntlet|Rabadon’s Deathcap"], ["Morgana", "Adaptive Helm|Morellonomicon|Void Staff"], ["Sentinel"], ["Hecarim"], ["Kobuko"], ["Veigar"]]], ["Vanguard Alune", "Fast 9", "S", 4.16, [["Alune", "Jeweled Gauntlet|Spear of Shojin|Striker’s Flail"], ["Morgana", "Hextech Gunblade|Morellonomicon|Void Staff"], ["Sentinel", "Adaptive Helm|Protector’s Vow|Protector’s Vow"], ["Taric", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Ivern"], ["Lillia"], ["Diana"], ["Fiddlesticks"], ["Rakan"]]], ["Riftbeast Brambleback", "Fast 8", "S", 4.23, [["Brambleback", "Edge of Night|Guinsoo’s Rageblade|Quicksilver"], ["Krug", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Elder Dragon", "Infinity Edge|Last Whisper|Striker’s Flail"], ["Sentinel", "Adaptive Helm|Protector’s Vow|Protector’s Vow"], ["Gnar"], ["Taric"], ["Murkwolf"], ["Pebbles"]]], ["Flora Fatalis Azir", "lvl 7", "S", 4.25, [["Azir", "Guinsoo’s Rageblade|Hextech Gunblade|Rabadon’s Deathcap"], ["Rammus", "Crownguard|Gargoyle Stoneplate|Gargoyle Stoneplate"], ["Zyra", "Morellonomicon|Spear of Shojin|Void Staff"], ["Fiddlesticks", "Ionic Spark|Spirit Visage|Sunfire Cape"], ["Soraka"], ["Teemo"], ["Veigar"]]], ["Lunar Nidalee", "Fast 8", "A", 4.31, [["Nidalee", "Bloodthirster|Edge of Night|Sterak’s Gage"], ["Aphelios", "Guinsoo’s Rageblade|Infinity Edge|Kraken’s Fury"], ["Amumu", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Sentinel", "Adaptive Helm|Adaptive Helm|Protector’s Vow"], ["Diana"], ["Kog’Maw"], ["Vi"], ["Varus"]]], ["Executioner Sett", "Fast 8", "A", 4.33, [["Sett", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Ezreal", "Deathblade|Last Whisper|Spear of Shojin"], ["Ahri", "Executioner Emblem|Blue Buff|Rabadon’s Deathcap"], ["Soraka", "Hextech Gunblade|Rabadon’s Deathcap|Spear of Shojin"], ["Fiddlesticks"], ["Alistar"], ["Yunara"], ["Ornn"]]]];/*DATA:COMPS:END*/
+const COMPS=raw.map(([name,style,tier,avg,units])=>({name,style,tier,avg,units:units.map(([name,items=''])=>({name,items:items?items.split('|'):[]}))}));
+const VI={'Adaptive Helm':'Mũ Thích Nghi','Morellonomicon':'Quỷ Thư Morello','Void Staff':'Trượng Hư Vô','Jeweled Gauntlet':'Găng Bảo Thạch','Nashor’s Tooth':'Nanh Nashor','Spear of Shojin':'Ngọn Giáo Shojin','Gargoyle Stoneplate':'Thú Tượng Thạch Giáp','Protector’s Vow':'Lời Thề Hộ Vệ','Warmog’s Armor':'Giáp Máu Warmog','Spirit Visage':'Giáp Tâm Linh','Blue Buff':'Bùa Xanh','Rabadon’s Deathcap':'Mũ Phù Thủy Rabadon','Hextech Gunblade':'Kiếm Súng Hextech','Edge of Night':'Áo Choàng Bóng Tối','Guinsoo’s Rageblade':'Cuồng Đao Guinsoo','Quicksilver':'Áo Choàng Thủy Ngân','Infinity Edge':'Vô Cực Kiếm','Last Whisper':'Cung Xanh','Crownguard':'Vương Miện Suy Vong','Ionic Spark':'Nỏ Sét','Sunfire Cape':'Áo Choàng Lửa','Bloodthirster':'Huyết Kiếm','Sterak’s Gage':'Móng Vuốt Sterak','Deathblade':'Kiếm Tử Thần'};
+// Cost tiers verified against MetaTFT /units, Set 18, 2026-11-05.
+/*DATA:COST:START*/const UNIT_COST={};
+[["Akali", "Camille", "Cinderling", "Elder Dragon", "Golem", "Karma", "Kobuko", "Krug", "Leona", "Murk Wolf", "Murkwolf", "Ornn", "Pebbles", "Rakan", "Razorbeak", "Rek’Sai", "Rift Herald", "Rift Scuttler", "Training Dummy", "Varus", "Veigar", "Voidspawn", "Xayah", "Yorick"], ["Alistar", "Caitlyn", "Elise", "Gromp", "Kayle", "LeBlanc", "Murkwolf", "Scuttlecrab", "Sejuani", "Shen", "Teemo", "Warwick", "Yunara"], ["Azir", "Cassiopeia", "Diana", "Fiddlesticks", "Hecarim", "Kha’Zix", "Kog’Maw", "Krug", "Mama Beak", "Master Yi", "Rammus", "Rengar", "Tristana", "Vi"], ["Ahri", "Amumu", "Aphelios", "Brambleback", "Ezreal", "Lillia", "Malphite", "Morgana", "Nidalee", "Sentinel", "Sett", "Sivir", "Soraka", "Zyra"], ["Alune", "Ashe", "Draven", "Elder Dragon", "Gnar", "Ivern", "Kennen", "Lux", "Lux (Blackthorn)", "Lux (Blossom)", "Lux (Coven)", "Lux (Elderwood)", "Lux (Fae)", "Lux (Inferno)", "Lux (Lunar)", "Lux (Primal)", "Lux (Solar)", "Maokai", "Taric"]].forEach((group,i)=>group.forEach(n=>UNIT_COST[n]=i+1));/*DATA:COST:END*/
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-P = lambda *a: os.path.join(HERE, *a)
-COMPS_CSV_URL = os.environ.get("COMPS_CSV_URL", "")  # tùy chọn: Google Sheet publish CSV (đội hình)
-UNITS_CSV_URL = os.environ.get("UNITS_CSV_URL", "")  # tùy chọn: Google Sheet publish CSV (tướng)
-UNITS_SET = os.environ.get("UNITS_SET", "")          # tùy chọn: số mùa, ví dụ 18
-norm = lambda n: n.strip().replace("'", "’")
+</script><script>
+// Source: recipes.js
+// Recipe matrix: https://fulltem.com/en/tft/items/ (Set 18, checked 2026-11-04).
+const COMPONENTS=['Sword','Bow','Rod','Tear','Vest','Cloak','Belt','Gloves','Spatula','Pan'];
+Object.assign(VI,{Sword:'Kiếm B.F.',Bow:'Cung Gỗ',Rod:'Gậy Quá Khổ',Tear:'Nước Mắt Nữ Thần',Vest:'Giáp Lưới',Cloak:'Áo Choàng Bạc',Belt:'Đai Khổng Lồ',Gloves:'Găng Đấu Tập',Spatula:'Xẻng Vàng',Pan:'Chảo Vàng','Giant Slayer':'Diệt Khổng Lồ','Red Buff':'Bùa Đỏ','Titan’s Resolve':'Quyền Năng Khổng Lồ','Archangel’s Staff':'Quyền Trượng Thiên Thần','Bramble Vest':'Áo Choàng Gai','Dragon’s Claw':'Vuốt Rồng','Evenshroud':'Giáp Vai Nguyệt Thần','Steadfast Heart':'Trái Tim Kiên Định','Hand Of Justice':'Bàn Tay Công Lý','Thief’s Gloves':'Găng Đạo Tặc','Striker’s Flail':'Chùy Xuyên Phá','Kraken’s Fury':'Thịnh Nộ Kraken','Executioner Emblem':'Ấn Đao Phủ'});
+const triangular=[
+['Deathblade','Giant Slayer','Hextech Gunblade','Spear of Shojin','Edge of Night','Bloodthirster','Sterak’s Gage','Infinity Edge','Fae Emblem','Hunter Emblem'],
+['Red Buff','Guinsoo’s Rageblade','Void Staff','Titan’s Resolve','Kraken’s Fury','Nashor’s Tooth','Last Whisper','Inferno Emblem','Rapidfire Emblem'],
+['Rabadon’s Deathcap','Archangel’s Staff','Crownguard','Ionic Spark','Morellonomicon','Jeweled Gauntlet','Blossom Emblem','Spellweaver Emblem'],
+['Blue Buff','Protector’s Vow','Adaptive Helm','Spirit Visage','Hand Of Justice','Lunar Emblem','Invoker Emblem'],
+['Bramble Vest','Gargoyle Stoneplate','Sunfire Cape','Steadfast Heart','Elderwood Emblem','Vanguard Emblem'],
+['Dragon’s Claw','Evenshroud','Quicksilver','Sprykin Emblem','Ravager Emblem'],
+['Warmog’s Armor','Striker’s Flail','Blackthorn Emblem','Brawler Emblem'],
+['Thief’s Gloves','Primal Emblem','Executioner Emblem'],
+['Tacticians Crown','Tactician’s Cape'],['Tacticians Shield']];
+const RECIPES={};triangular.forEach((row,a)=>row.forEach((name,b)=>RECIPES[name]=[COMPONENTS[a],COMPONENTS[a+b]]));
+const STANDARD=triangular.slice(0,8).flatMap((row,a)=>row.slice(0,8-a));
+const SPECIAL=['Dawncore','Luden’s Tempest','Silvermere Dawn','Eternal Pact','Wit’s End','Lightshield Crest','Hellfire Hatchet','Infinity Force','Lich Bane','Manazane','Horizon Focus','Gold Collector','Zhonya’s Paradox','Blighting Jewel','Talisman of Ascension','Void Gauntlet','The Indomitable','Flickerblades','Statikk Shiv','Mittens','Rapid Firecannon','Aegis of Dawn','Seeker’s Armguard','Titanic Hydra','Aegis of Dusk','Gambler’s Blade','Mogul’s Mail','Hullcrusher','Fishbones','Forbidden Idol','Juggernaut Emblem','Defender Emblem','Flora Fatalis Emblem','Coven Emblem','Health Potion','Blast Potion','Mana Potion'];
+const CATALOG=[...new Set([...Object.keys(RECIPES),...STANDARD.map(x=>'Radiant '+x),...SPECIAL,...['Health Potion','Blast Potion','Mana Potion'].map(x=>'Radiant '+x)])].sort();
+function planItems(comp,stock,components){
+ const left={...stock},matches=[],slots=[];
+ comp.units.forEach(u=>u.items.forEach(item=>{if(left[item]>0){left[item]--;matches.push({unit:u.name,item})}else slots.push({unit:u.name,item})}));
+ const start=COMPONENTS.map(n=>components[n]||0),memo=new Map();
+ // Maximize ready-to-craft items first; partial recipes contribute a smaller score.
+ function solve(k,counts){if(k===slots.length)return {value:0,steps:[]};const key=k+':'+counts.join(',');if(memo.has(key))return memo.get(key);
+ let best=solve(k+1,counts);const recipe=RECIPES[slots[k].item];if(recipe){const indices=recipe.map(x=>COMPONENTS.indexOf(x));
+ const options=[indices,...[...new Set(indices)].map(x=>[x])];
+ for(const take of options){const next=counts.slice();let ok=true;for(const i of take){if(!next[i]){ok=false;break}next[i]--}if(!ok)continue;
+ const tail=solve(k+1,next),value=tail.value+(take.length===2?4:1);if(value>best.value)best={value,steps:[{...slots[k],used:take.map(i=>COMPONENTS[i]),complete:take.length===2},...tail.steps]};}
+ }memo.set(key,best);return best;}
+ const result=solve(0,start);let remaining={...components};result.steps.forEach(s=>s.used.forEach(x=>remaining[x]--));
+ const crafted=result.steps.filter(s=>s.complete),partial=result.steps.filter(s=>!s.complete).map(s=>{const missing=[...RECIPES[s.item]];missing.splice(missing.indexOf(s.used[0]),1);return {...s,missing}});
+ return {matches,crafted,partial,remaining,value:matches.length*4+result.value,unmatched:left};
+}
+function rankComp(c,s){const plan=planItems(c,s.items,s.components),have=c.units.filter(u=>s.units.includes(u.name)),total=Object.values(s.items).reduce((a,b)=>a+b,0),parts=Object.values(s.components).reduce((a,b)=>a+b,0);const equipment=total*2+parts,ur=s.units.length?have.length/s.units.length:0,ir=equipment?plan.value/(2*equipment):0,w=s.units.length?(equipment?s.weight/100:1):0;return {c,...plan,have,total,parts,score:Math.round(100*(ur*w+ir*(1-w)))}}
 
+</script><script>
+// Source: icons.js
+// Asset names observed on MetaTFT's rendered item catalog, 2026-11-05.
+const ITEM_ICONS={};
+const componentAssets={Sword:'bfsword',Bow:'recurvebow',Rod:'needlesslylargerod',Tear:'tearofthegoddess',Vest:'chainvest',Cloak:'negatroncloak',Belt:'giantsbelt',Gloves:'sparringgloves',Spatula:'spatula',Pan:'fryingpan'};
+const assetSlug=n=>n.toLowerCase().replace(/[^a-z]/g,'');
+const radiantUnderscore=['Adaptive Helm','Gargoyle Stoneplate','Giant Slayer','Kraken’s Fury','Rabadon’s Deathcap','Spirit Visage','Sunfire Cape','Titan’s Resolve'];
+for(const n of COMPONENTS)ITEM_ICONS[n]='da_component_'+componentAssets[n];
+for(const n of CATALOG){
+ let file;
+ if(n.startsWith('Radiant ')){const base=n.slice(8);file='da_'+assetSlug(base)+(base.endsWith('Potion')?'18_radiant':radiantUnderscore.includes(base)?'_radiant':'radiant')}
+ else if(n.includes('Emblem'))file='da_18_emblem'+assetSlug(n.replace(' Emblem','')).replace('ravager','slayer');
+ else if(n.endsWith('Potion'))file='da_'+assetSlug(n)+'18';
+ else if(SPECIAL.includes(n))file='da_artifact_'+assetSlug(n);
+ else file='da_'+assetSlug(n);
+ ITEM_ICONS[n]=file;
+}
+ITEM_ICONS['Flickerblades']='da_artifact_navoriflickerblade';
+ITEM_ICONS['Talisman of Ascension']='da_item_artifact_talismanofascension';
+function itemIcon(name,compact=false){const file=ITEM_ICONS[name];if(!file)return '';return `<img class="item-icon${compact?' compact':''}" src="https://cdn.metatft.com/file/metatft/items/${file}.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.onerror=null;this.hidden=true" title="${esc(VI[name]||name)}">`}
+function itemWithName(n){return `<span class="item-label">${itemIcon(n,true)}<span>${esc(VI[n]||n)}</span></span>`}
+function recipeVisual(n){return (RECIPES[n]||[]).map(itemWithName).join('<span class="recipe-plus"> + </span>')}
 
-def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "tft-compass-updater"})
-    return urllib.request.urlopen(req, timeout=60).read().decode("utf-8-sig")
+</script><script>
+// Source: app.js
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const names=[...new Set([
+  ...Object.keys(UNIT_COST),
+  ...COMPS.flatMap(c=>c.units.map(u=>u.name))
+])].sort(), items=CATALOG;
+let state={units:[],items:{},components:{},weight:50},mode='components',costFilter=0;
+const clean=(obj,allowed)=>Object.fromEntries(Object.entries(obj||{}).filter(([k,v])=>allowed.includes(k)&&Number.isInteger(v)&&v>0&&v<=20));
+try{const s=JSON.parse(localStorage.getItem('tft-compass-v1'));if(s)state={units:(s.units||[]).filter(n=>names.includes(n)),items:clean(s.items,items),components:clean(s.components,COMPONENTS),weight:Number.isFinite(s.weight)?Math.max(0,Math.min(100,s.weight)):50}}catch{}
+const img=n=>'https://cdn.metatft.com/file/metatft/champions/tft18_'+n.toLowerCase().replace(/[^a-z]/g,'')+'.png';
+function save(){try{localStorage.setItem('tft-compass-v1',JSON.stringify(state))}catch{}render()}
+const label=n=>VI[n]||n;
+function recipeLabel(n){return (RECIPES[n]||[]).map(label).join(' + ')}
+function picker(){const q=$('search').value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');let list=(mode==='units'?names:mode==='components'?COMPONENTS:items).filter(n=>(n+' '+label(n)).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').includes(q));
+if(mode==='items'){const cat=$('category').value;list=list.filter(n=>cat==='all'||(cat==='normal'?STANDARD.includes(n):cat==='emblem'?n.includes('Emblem'):cat==='radiant'?n.startsWith('Radiant '):!STANDARD.includes(n)&&!n.includes('Emblem')&&!n.startsWith('Radiant ')))}
+if(mode==='units'){list=list.filter(n=>!costFilter||UNIT_COST[n]===costFilter).sort((a,b)=>UNIT_COST[a]-UNIT_COST[b]||a.localeCompare(b));$('costFilters').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.cost)===costFilter)))}
+$('picker').className=mode==='units'?'':'items';$('picker').innerHTML=list.map((n,i)=>mode==='units'?`${i===0||UNIT_COST[list[i-1]]!==UNIT_COST[n]?`<div class="cost-heading tier-${UNIT_COST[n]}">${UNIT_COST[n]} vàng</div>`:''}<button class="unit tier-${UNIT_COST[n]} ${state.units.includes(n)?'chosen':''}" data-unit="${esc(n)}" aria-pressed="${state.units.includes(n)}"><img src="${img(n)}" alt="" onerror="this.style.visibility='hidden'">${esc(n)}<span class="unit-cost">${UNIT_COST[n]} vàng</span></button>`:`<button class="item" data-${mode==='components'?'component':'item'}="${esc(n)}">${itemIcon(n)}<span class="item-title">${esc(label(n))}</span><span class="item-quantity">＋ ${mode==='components'?(state.components[n]||0):(state.items[n]||0)}</span><small>${esc(mode==='components'?n:recipeLabel(n)||n)}</small></button>`).join('')||'<div class="empty">Không tìm thấy. Thử tên tiếng Anh hoặc đổi nhóm.</div>'}
+function componentDetails(r){return `<div class="component-plan"><h3>Ghép được ngay: ${r.crafted.length} món</h3>${r.crafted.map(m=>`<div class="detailrow match">✓ ${itemWithName(m.item)} → <b>${esc(m.unit)}</b><small>${recipeVisual(m.item)}</small></div>`).join('')||'<p class="muted">Chưa có đủ cặp mảnh cho bộ đồ này.</p>'}<h3>Giữ mảnh để hoàn thiện: ${r.partial.length} món</h3>${r.partial.map(m=>`<div class="detailrow">${itemWithName(m.item)} → <b>${esc(m.unit)}</b><small>Giữ ${m.used.map(itemWithName).join(' + ')} · Cần thêm <strong>${m.missing.map(itemWithName).join(' + ')}</strong></small></div>`).join('')||'<p class="muted">Không có công thức dở dang trong phương án này.</p>'}<p class="muted">Mảnh chưa dùng: ${esc(Object.entries(r.remaining).filter(([k,v])=>v>0).map(([k,v])=>label(k)+' ×'+v).join(', ')||'Không còn')}.</p><p class="muted">Đồ chưa khớp bộ tham khảo: ${esc(Object.entries(r.unmatched).filter(([k,v])=>v>0).map(([k,v])=>label(k)+' ×'+v).join(', ')||'Không có')}.</p></div>`}
+function render(){const total=Object.values(state.items).reduce((a,b)=>a+b,0);const parts=Object.values(state.components).reduce((a,b)=>a+b,0);$('cc').textContent=parts;$('uc').textContent=state.units.length;$('ic').textContent=total;$('weight').value=state.weight;$('weightLabel').textContent=state.weight+'% · '+(100-state.weight)+'%';picker();$('inventory').innerHTML=state.units.map(n=>`<span class="chip">${esc(n)}<button aria-label="Bỏ ${esc(n)}" data-unit="${esc(n)}">×</button></span>`).join('')+Object.entries(state.items).map(([n,v])=>`<span class="chip">${itemIcon(n,true)}${esc(VI[n]||n)} ×${v}<button aria-label="Giảm ${esc(n)}" data-minus="${esc(n)}">−</button></span>`).join('')+Object.entries(state.components).map(([n,v])=>`<span class="chip">${itemIcon(n,true)}${esc(label(n))} ×${v}<button aria-label="Giảm mảnh ${esc(label(n))}" data-partminus="${esc(n)}">−</button></span>`).join('')||'<div class="empty">Kho trống. Chọn tướng hoặc trang bị ở trên.</div>';
+const active=state.units.length+total+parts>0;$('summary').textContent=active?`Đang so sánh ${state.units.length} tướng và ${total} đồ hoàn chỉnh và ${parts} mảnh · Điểm phù hợp không phải tỷ lệ thắng.`:'Chọn ít nhất một tướng hoặc món đồ để nhận điểm phù hợp. Hiện sắp theo thứ hạng trung bình.';
+$('results').innerHTML=COMPS.map(c=>rankComp(c,state)).sort((a,b)=>b.score-a.score||a.c.avg-b.c.avg).map(r=>{const {c,have,matches,score:sc}=r;return `<article class="card"><div class="cardtop"><div><h3><span class="tier">${c.tier}</span>${esc(c.name)}</h3><div class="meta">${esc(c.style)} · Hạng TB ${c.avg.toFixed(2)} · ${c.units.length} tướng</div></div><div class="score">${active?sc+'%':'—'}<small>phù hợp kho</small></div></div><div class="roster">${c.units.map(u=>`<div class="portrait ${state.units.includes(u.name)?'have':''}"><img src="${img(u.name)}" alt="" onerror="this.style.visibility='hidden'">${esc(u.name)}${state.units.includes(u.name)?' ✓':''}</div>`).join('')}</div><div class="bar"><i style="width:${sc}%"></i></div><div class="reason">Tận dụng ${have.length}/${state.units.length} tướng đã chọn · ${matches.length}/${total} đồ có sẵn · Ghép ngay ${r.crafted.length} món · Giữ ${r.partial.length} mảnh · Còn thiếu ${c.units.length-have.length} tướng.</div><details><summary>Xem tướng cần tìm & phân trang bị ↓</summary><p class="muted">Cần tìm: ${esc(c.units.filter(u=>!state.units.includes(u.name)).map(u=>u.name).join(', ')||'Đã có đủ tên tướng trong đội hình.' )}</p><p class="muted">${matches.length?'Phân đồ hiện có (mỗi món chỉ dùng một lần):':'Chưa có món nào khớp trang bị đề xuất.'}</p>${matches.map(m=>`<div class="detailrow match">✓ ${itemWithName(m.item)} → <b>${esc(m.unit)}</b>${state.units.includes(m.unit)?'':' (chưa có tướng)'}</div>`).join('')}${componentDetails(r)}<h3>Bộ trang bị tham khảo</h3>${c.units.filter(u=>u.items.length).map(u=>`<div class="detailrow"><b>${esc(u.name)}</b> · ${u.items.map(itemWithName).join(' / ')}</div>`).join('')}<p class="muted">${c.style.startsWith('Fast')?'Hướng lên cấp '+c.style.split(' ')[1]+': cần cân nhắc máu và lượng vàng trước khi theo đội hình.':'Hướng reroll cấp '+c.style.split(' ')[1]+': cần kiểm tra số bản sao và đối thủ đang tranh tướng.'}</p></details></article>`}).join('');renderCrafts()}
+document.addEventListener('click',e=>{let b=e.target.closest('button');if(!b)return;if(b.dataset.cost!==undefined){costFilter=Number(b.dataset.cost);picker();return}if(b.dataset.unit){let n=b.dataset.unit;state.units=state.units.includes(n)?state.units.filter(x=>x!==n):[...state.units,n];save()}if(b.dataset.item){let n=b.dataset.item;state.items[n]=Math.min(20,(state.items[n]||0)+1);save()}if(b.dataset.component){const n=b.dataset.component;state.components[n]=Math.min(20,(state.components[n]||0)+1);save()}if(b.dataset.partminus){if(--state.components[b.dataset.partminus]<=0)delete state.components[b.dataset.partminus];save()}if(b.dataset.minus){if(--state.items[b.dataset.minus]<=0)delete state.items[b.dataset.minus];save()}});
+function renderCrafts(){let el=$('crafts');if(!el){el=document.createElement('details');el.id='crafts';el.className='panel';$('inventory').parentElement.after(el)}const available=Object.entries(RECIPES).filter(([name,recipe])=>{let c={...state.components};return recipe.every(n=>c[n]>0&&--c[n]>=0)});el.innerHTML=`<summary>Tra cứu: ${available.length} món có thể ghép từ kho</summary><p class="muted">Các lựa chọn thay thế, có thể dùng chung mảnh. Không phải danh sách ghép đồng thời.</p>${available.map(([n])=>`<div class="detailrow"><b>${itemWithName(n)}</b><small>${recipeVisual(n)}</small></div>`).join('')||'<p class="muted">Thêm mảnh đồ để xem các công thức.</p>'}`}
+function tabMode(m){mode=m;$('costFilters').hidden=m!=='units';['unit','component','item'].forEach(t=>$(t+'Tab').classList.toggle('active',m===({unit:'units',component:'components',item:'items'}[t])));$('category').hidden=m!=='items';$('search').value='';$('search').placeholder=m==='units'?'Tìm tên tướng…':m==='components'?'Tìm mảnh đồ…':'Tìm đồ tiếng Việt hoặc tiếng Anh…';$('hint').textContent=m==='units'?'Chạm để thêm hoặc bỏ chọn tướng.':m==='components'?'Chạm nhiều lần để tăng số mảnh. Không nhập lại mảnh đã ghép thành đồ.':'Chạm để tăng số món. Đồ chưa có trong bộ tham khảo sẽ được ghi rõ.';picker()}
+$('unitTab').onclick=()=>tabMode('units');$('componentTab').onclick=()=>tabMode('components');$('itemTab').onclick=()=>tabMode('items');$('category').onchange=picker;$('search').oninput=picker;$('weight').oninput=e=>{state.weight=Number(e.target.value);save()};$('reset').onclick=()=>{state.units=[];state.items={};state.components={};save()};$('example').onclick=()=>{state.units=['Teemo','Alistar'];state.items={};state.components={Sword:1,Tear:1,Rod:1,Gloves:1,Belt:1};tabMode('components');save()};render();tabMode('components');
 
-
-def check_units(units):
-    """Kiểm tra danh sách tướng (list dict name/cost/items). Dừng bằng ValueError nếu sai."""
-    groups = [[] for _ in range(5)]
-    items, seen = {}, set()
-    for u in units:
-        name, cost = norm(u.get("name", "")), u.get("cost")
-        if not name:
-            raise ValueError("có dòng tướng không có tên")
-        if name in seen:
-            raise ValueError(f"tướng bị trùng: {name}")
-        if not (isinstance(cost, int) and 1 <= cost <= 5):
-            raise ValueError(f"giá không hợp lệ ở tướng {name}: {cost!r}")
-        seen.add(name)
-        groups[cost - 1].append(name)
-        its = [norm(i) for i in u.get("items", []) if i and i.strip()]
-        if its:
-            items[name] = its
-    if len(seen) < 40:
-        raise ValueError(f"chỉ có {len(seen)} tướng, quá ít (nghi thiếu dữ liệu)")
-    return [sorted(g) for g in groups], items
-
-
-def units_from_csv(url):
-    """CSV cột: name,cost,items  (items cách nhau bằng |). Cột tùy chọn: extra (x/1/true = đơn vị phụ)."""
-    reader = csv.DictReader(io.StringIO(get(url)))
-    reader.fieldnames = [(h or "").strip().lower() for h in (reader.fieldnames or [])]
-    if not {"name", "cost"} <= set(reader.fieldnames):
-        raise ValueError(f"CSV cần cột name,cost,items; hiện có: {reader.fieldnames}")
-    out = []
-    for r in reader:
-        name = (r.get("name") or "").strip()
-        if not name:
-            continue  # bỏ dòng trống
-        cost_txt = (r.get("cost") or "").strip()
-        if not cost_txt.isdigit():
-            raise ValueError(f"giá không phải số ở tướng {name}: {cost_txt!r}")
-        u = {"name": name, "cost": int(cost_txt),
-             "items": [i.strip() for i in (r.get("items") or "").split("|") if i.strip()]}
-        if (r.get("extra") or "").strip().lower() in ("x", "1", "true", "yes"):
-            u["extra"] = True
-        out.append(u)
-    return out
-
-
-def load_units():
-    """Trả về (5 nhóm giá, {tướng: [trang bị]}, số set). Ưu tiên Google Sheet, lỗi -> units.json cũ."""
-    path = P("data", "units.json")
-    data = json.load(open(path, encoding="utf-8"))
-    if UNITS_CSV_URL:
-        try:
-            units = units_from_csv(UNITS_CSV_URL)
-            check_units(units)  # chỉ ghi đè khi dữ liệu mới hợp lệ
-            data["units"] = units
-            data["source"] = "Google Sheet (UNITS_CSV_URL)"
-            data["checked_at"] = date.today().isoformat()
-            if UNITS_SET.isdigit():
-                data["set"] = int(UNITS_SET)
-            json.dump(data, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-            print(f"Tướng: lấy {len(units)} tướng từ Google Sheet")
-        except Exception as e:
-            print("! Lỗi đọc Google Sheet tướng, giữ units.json cũ:", e)
-    try:
-        groups, items = check_units(data["units"])
-    except ValueError as e:
-        sys.exit(f"DỪNG: units.json không hợp lệ: {e}")
-    print("Số tướng theo giá:", [len(g) for g in groups], "| tổng", sum(map(len, groups)))
-    return groups, items, data.get("set")
-
-
-def comps_from_csv(url):
-    """CSV cột: name,style,tier,avg,unit,items (mỗi dòng 1 tướng; items cách nhau bằng |)"""
-    rows = csv.DictReader(io.StringIO(get(url)))
-    out, idx = [], {}
-    for r in rows:
-        k = r["name"].strip()
-        if k not in idx:
-            idx[k] = [k, r["style"].strip(), r["tier"].strip(), float(r["avg"]), []]
-            out.append(idx[k])
-        u = [r["unit"].strip()]
-        if r.get("items", "").strip():
-            u.append(r["items"].strip())
-        idx[k][4].append(u)
-    return out
-
-
-def main():
-    costs, unit_items, setno = load_units()
-    json.dump(costs, open(P("data", "unit_cost.json"), "w", encoding="utf-8"), ensure_ascii=False)
-    print(f"Tướng: dùng dữ liệu Set {setno}")
-
-    if COMPS_CSV_URL:
-        try:
-            comps = comps_from_csv(COMPS_CSV_URL)
-            json.dump(comps, open(P("data", "comps.json"), "w", encoding="utf-8"), ensure_ascii=False)
-            print(f"Đội hình: lấy {len(comps)} comp từ Google Sheet")
-        except Exception as e:
-            print("! Lỗi đọc Google Sheet, giữ comps.json cũ:", e)
-    comps = json.load(open(P("data", "comps.json"), encoding="utf-8"))
-    if not comps:
-        sys.exit("comps.json rỗng, dừng.")
-
-    # kiểm tra: tướng trong comp phải có giá, nếu không web sẽ lỗi
-    known = {n for g in costs for n in g}
-    missing = sorted({u[0] for c in comps for u in c[4]} - known)
-    if missing:
-        sys.exit(f"DỪNG: tướng trong đội hình chưa có trong units.json: {missing}")
-
-    html = open(P("index.html"), encoding="utf-8").read()
-    html = re.sub(r"/\*DATA:COMPS:START\*/.*?/\*DATA:COMPS:END\*/",
-                  lambda m: "/*DATA:COMPS:START*/const raw=[["Vanguard Morgana", "Fast 9", "S", 4.03, [["Morgana", "Adaptive Helm|Morellonomicon|Void Staff"], ["Alune", "Jeweled Gauntlet|Nashor’s Tooth|Spear of Shojin"], ["Sentinel", "Gargoyle Stoneplate|Protector’s Vow|Warmog’s Armor"], ["Elder Dragon"], ["Taric"], ["Cassiopeia"], ["Diana"], ["Elise"]]], ["Invoker Teemo Alistar", "lvl 6", "S", 4.16, [["Teemo", "Jeweled Gauntlet|Spear of Shojin|Striker’s Flail"], ["Alistar", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["LeBlanc", "Blue Buff|Jeweled Gauntlet|Rabadon’s Deathcap"], ["Morgana", "Adaptive Helm|Morellonomicon|Void Staff"], ["Sentinel"], ["Hecarim"], ["Kobuko"], ["Veigar"]]], ["Vanguard Alune", "Fast 9", "S", 4.16, [["Alune", "Jeweled Gauntlet|Spear of Shojin|Striker’s Flail"], ["Morgana", "Hextech Gunblade|Morellonomicon|Void Staff"], ["Sentinel", "Adaptive Helm|Protector’s Vow|Protector’s Vow"], ["Taric", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Ivern"], ["Lillia"], ["Diana"], ["Fiddlesticks"], ["Rakan"]]], ["Riftbeast Brambleback", "Fast 8", "S", 4.23, [["Brambleback", "Edge of Night|Guinsoo’s Rageblade|Quicksilver"], ["Krug", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Elder Dragon", "Infinity Edge|Last Whisper|Striker’s Flail"], ["Sentinel", "Adaptive Helm|Protector’s Vow|Protector’s Vow"], ["Gnar"], ["Taric"], ["Murkwolf"], ["Pebbles"]]], ["Flora Fatalis Azir", "lvl 7", "S", 4.25, [["Azir", "Guinsoo’s Rageblade|Hextech Gunblade|Rabadon’s Deathcap"], ["Rammus", "Crownguard|Gargoyle Stoneplate|Gargoyle Stoneplate"], ["Zyra", "Morellonomicon|Spear of Shojin|Void Staff"], ["Fiddlesticks", "Ionic Spark|Spirit Visage|Sunfire Cape"], ["Soraka"], ["Teemo"], ["Veigar"]]], ["Lunar Nidalee", "Fast 8", "A", 4.31, [["Nidalee", "Bloodthirster|Edge of Night|Sterak’s Gage"], ["Aphelios", "Guinsoo’s Rageblade|Infinity Edge|Kraken’s Fury"], ["Amumu", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Sentinel", "Adaptive Helm|Adaptive Helm|Protector’s Vow"], ["Diana"], ["Kog’Maw"], ["Vi"], ["Varus"]]], ["Executioner Sett", "Fast 8", "A", 4.33, [["Sett", "Gargoyle Stoneplate|Spirit Visage|Warmog’s Armor"], ["Ezreal", "Deathblade|Last Whisper|Spear of Shojin"], ["Ahri", "Executioner Emblem|Blue Buff|Rabadon’s Deathcap"], ["Soraka", "Hextech Gunblade|Rabadon’s Deathcap|Spear of Shojin"], ["Fiddlesticks"], ["Alistar"], ["Yunara"], ["Ornn"]]]];/*DATA:COMPS:END*/",
-                  html, flags=re.S)
-    html = re.sub(r"/\*DATA:COST:START\*/.*?/\*DATA:COST:END\*/",
-                  lambda m: "/*DATA:COST:START*/const UNIT_COST={};
-[["Akali", "Camille", "Karma", "Kobuko", "Leona", "Ornn", "Pebbles", "Rakan", "Rek’Sai", "Varus", "Veigar", "Xayah", "Yorick"], ["Alistar", "Caitlyn", "Elise", "Kayle", "LeBlanc", "Murkwolf", "Sejuani", "Shen", "Teemo", "Warwick", "Yunara"], ["Azir", "Cassiopeia", "Diana", "Fiddlesticks", "Hecarim", "Kha’Zix", "Kog’Maw", "Krug", "Master Yi", "Rammus", "Rengar", "Tristana", "Vi"], ["Ahri", "Amumu", "Aphelios", "Brambleback", "Ezreal", "Lillia", "Malphite", "Morgana", "Nidalee", "Sentinel", "Sett", "Sivir", "Soraka", "Zyra"], ["Alune", "Ashe", "Draven", "Elder Dragon", "Gnar", "Ivern", "Kennen", "Lux", "Maokai", "Taric"]].forEach((group,i)=>group.forEach(n=>UNIT_COST[n]=i+1));/*DATA:COST:END*/",
-                  html, flags=re.S)
-    today = date.today().strftime("%d/%m/%Y")
-    html = re.sub(r"<!--NOTICE:START-->● Dữ liệu cập nhật ngày 08/11/2026: 7 đội hình.<!--NOTICE:END-->",
-                  f"<!--NOTICE:START-->● Dữ liệu cập nhật ngày 08/11/2026: 7 đội hình.<!--NOTICE:END-->",
-                  html, flags=re.S)
-    html = re.sub(r'<span class="muted">\d+ đội hình</span>', f'<span class="muted">{len(comps)} đội hình</span>', html)
-    open(P("index.html"), "w", encoding="utf-8").write(html)
-    print("Đã ghi index.html")
-
-
-main()
+</script></body></html>
