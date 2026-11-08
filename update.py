@@ -25,14 +25,34 @@ def refresh_costs():
         sets = d.get("sets") or {}
         num = max(int(k) for k in sets if str(k).isdigit())
         champs = sets[str(num)]["champions"]
-        groups = [[] for _ in range(5)]
+
+        # Đơn vị không phải tướng chơi được (thêm tên vào đây nếu còn sót)
+        EXCLUDE = {"Training Dummy", "Golem", "Rift Scuttler", "Voidspawn",
+                   "Cinderling", "Razorbeak", "Gromp", "Scuttlecrab",
+                   "Mama Beak", "Rift Herald"}
+
+        seen = {}  # mỗi tên chỉ giữ 1 giá (tránh Elder Dragon, Krug, Murkwolf bị lặp)
         for c in champs:
             cost = c.get("cost")
-            if isinstance(cost, int) and 1 <= cost <= 5 and c.get("name"):
-                groups[cost - 1].append(norm(c["name"]))
+            name = c.get("name")
+            if not (isinstance(cost, int) and 1 <= cost <= 5 and name):
+                continue
+            name = norm(name)
+            if "(" in name:           # bỏ biến thể kiểu "Lux (Fae)"
+                continue
+            if name in EXCLUDE:
+                continue
+            if not c.get("traits"):   # không có tộc/hệ -> thường là quái, dummy
+                continue
+            seen.setdefault(name, cost)
+
+        groups = [[] for _ in range(5)]
+        for name, cost in seen.items():
+            groups[cost - 1].append(name)
+
         if sum(map(len, groups)) < 40:  # quá ít -> dữ liệu lạ, bỏ
             raise ValueError("số tướng bất thường")
-        groups = [sorted(set(g)) for g in groups]
+        groups = [sorted(g) for g in groups]
         return groups, num
     except Exception as e:
         print("! Không cập nhật được giá tướng, giữ dữ liệu cũ:", e)
