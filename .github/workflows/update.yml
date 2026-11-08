@@ -15,6 +15,8 @@ jobs:
       - run: python update.py
         env:
           COMPS_CSV_URL: ${{ vars.COMPS_CSV_URL }}
+          UNITS_CSV_URL: ${{ vars.UNITS_CSV_URL }}
+          UNITS_SET: ${{ vars.UNITS_SET }}
       - name: Lưu nếu có thay đổi
         run: |
           git config user.name "tft-bot"; git config user.email "bot@users.noreply.github.com"
