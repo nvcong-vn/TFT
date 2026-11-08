@@ -77,7 +77,10 @@ function recipeVisual(n){return (RECIPES[n]||[]).map(itemWithName).join('<span c
 </script><script>
 // Source: app.js
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const names=[...new Set(COMPS.flatMap(c=>c.units.map(u=>u.name)))].sort(),items=CATALOG;
+const names=[...new Set([
+  ...Object.keys(UNIT_COST),
+  ...COMPS.flatMap(c=>c.units.map(u=>u.name))
+])].sort(), items=CATALOG;
 let state={units:[],items:{},components:{},weight:50},mode='components',costFilter=0;
 const clean=(obj,allowed)=>Object.fromEntries(Object.entries(obj||{}).filter(([k,v])=>allowed.includes(k)&&Number.isInteger(v)&&v>0&&v<=20));
 try{const s=JSON.parse(localStorage.getItem('tft-compass-v1'));if(s)state={units:(s.units||[]).filter(n=>names.includes(n)),items:clean(s.items,items),components:clean(s.components,COMPONENTS),weight:Number.isFinite(s.weight)?Math.max(0,Math.min(100,s.weight)):50}}catch{}
